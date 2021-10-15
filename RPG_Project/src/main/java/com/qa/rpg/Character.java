@@ -1,5 +1,8 @@
 package com.qa.rpg;
 
+import java.util.List;
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -58,6 +61,29 @@ public class Character {
 
 	public void setWeapon(String weapon) {
 		this.weapon = weapon;
+	}
+
+	@Override
+	public String toString() {
+		return "Character [id=" + id + ", name=" + name + ", vision=" + vision + ", weapon=" + weapon + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name, vision, weapon);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Character other = (Character) obj;
+		return Objects.equals(id, other.id) && Objects.equals(name, other.name) && Objects.equals(vision, other.vision)
+				&& Objects.equals(weapon, other.weapon);
 	}
 	
 	
