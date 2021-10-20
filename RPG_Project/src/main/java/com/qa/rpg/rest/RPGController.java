@@ -39,7 +39,7 @@ public class RPGController {
 	}
 	
 	@GetMapping("/getCharacter/{id}")
-	public List<Character> getCharacterByIndex(@PathVariable Integer id) {
+	public Character getCharacterByIndex(@PathVariable Integer id) {
 		return this.service.getCharacterByIndex(id);
 	}
 	
@@ -69,4 +69,5 @@ public class RPGController {
 		} else {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+	}
 }

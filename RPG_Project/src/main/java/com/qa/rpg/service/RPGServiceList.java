@@ -21,13 +21,11 @@ public class RPGServiceList implements RPGService {
 
 	@Override
 	public Character getCharacterByIndex(Integer id) {
-
 		return this.characters.get(id);
 	}
 
 	@Override
 	public List<Character> getAllCharacters() {
-
 		return this.characters;
 	}
 

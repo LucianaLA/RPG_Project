@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.qa.rpg.Character;
 import com.qa.rpg.repo.CharacterRepo;
+import com.qa.rpg.exception.CharacterNotFoundException;
 
 
 @Primary
@@ -28,7 +29,7 @@ public class RPGServiceDB implements RPGService{
 	
 	@Override
 	public Character getCharacterByIndex(Integer id) {
-		return this.repo.findById(id);
+		return this.repo.findById(id).orElseThrow(CharacterNotFoundException::new);
 	}
 	
 	@Override
